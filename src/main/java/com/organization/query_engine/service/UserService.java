@@ -60,7 +60,6 @@ public class UserService {
                 operation.index(
                     index -> index.index(indexName).id(user.getId().toString()).document(user)));
       }
-      // todo: stream and paralelstream difference
       BulkResponse response = client.bulk(builder.build());
       long count = response.items().parallelStream().filter(item -> item.error() == null).count();
       if (response.errors()) {
