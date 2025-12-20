@@ -2,18 +2,17 @@ package com.organization.query_engine.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.*;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Getter
 @Setter
@@ -21,161 +20,179 @@ import java.util.UUID;
 @NoArgsConstructor
 @Document(indexName = "users")
 public class UserEntity implements Serializable {
-    @Id
-    private UUID id;
+  @Id private UUID id;
 
-    private String username;
-    @JsonProperty("first_name")
-    private String firstName;
-    @JsonProperty("last_name")
-    private String lastName;
+  private String username;
 
-    private Gender gender;
+  @JsonProperty("first_name")
+  private String firstName;
 
-    @Field(type = FieldType.Date)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private LocalDate birthday;
+  @JsonProperty("last_name")
+  private String lastName;
 
-    private Integer age;
-    private List<Role> roles;
-    private Language language;
-    private String timezone;
+  private Gender gender;
 
-    @Field(type = FieldType.Object)
-    private Location location;
+  @Field(type = FieldType.Date)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+  private LocalDate birthday;
 
-    @Field(type = FieldType.Object)
-    private Contacts contacts;
+  private Integer age;
+  private List<Role> roles;
+  private Language language;
+  private String timezone;
 
-    @Field(type = FieldType.Object)
-    private Channels channels;
+  @Field(type = FieldType.Object)
+  private Location location;
 
-    @Field(type = FieldType.Object)
-    private Subscriptions subscriptions;
+  @Field(type = FieldType.Object)
+  private Contacts contacts;
 
-    @Field(type = FieldType.Object)
-    private Preferences preferences;
+  @Field(type = FieldType.Object)
+  private Channels channels;
 
-    private List<Segment> segments;
-    @JsonProperty("custom_tags")
-    private List<CustomTag> customTags;
+  @Field(type = FieldType.Object)
+  private Subscriptions subscriptions;
 
-    @JsonProperty("account_status")
-    private AccountStatus accountStatus;
+  @Field(type = FieldType.Object)
+  private Preferences preferences;
 
-    @Field(type = FieldType.Object)
-    private Stats stats;
+  private List<Segment> segments;
 
-    @Field(type = FieldType.Object)
-    private Metadata metadata;
+  @JsonProperty("custom_tags")
+  private List<CustomTag> customTags;
 
-    // --- Nested classes ---
-    @Data
-    public static class Location {
-        private String city;
-        private String country;
-    }
+  @JsonProperty("account_status")
+  private AccountStatus accountStatus;
 
-    @Data
-    public static class Contacts {
-        private String email;
-        @JsonProperty("phone_number")
-        private String phoneNumber;
-        @JsonProperty("telegram_id")
-        private String telegramId;
-        @JsonProperty("telegram_username")
-        private String telegramUsername;
-        @JsonProperty("fcm_token")
-        private String fcmToken;
-    }
+  @Field(type = FieldType.Object)
+  private Stats stats;
 
-    @Data
-    public static class Channel {
-        private Boolean enabled;
-        private String provider;
+  @Field(type = FieldType.Object)
+  private Metadata metadata;
 
-        @JsonProperty("last_sent_at")
-        private OffsetDateTime lastSentAt;
-    }
+  // --- Nested classes ---
+  @Data
+  public static class Location {
+    private String city;
+    private String country;
+  }
 
-    @Data
-    public static class Channels {
-        private Channel email;
-        private Channel sms;
-        private Channel telegram;
-        private Channel push;
-    }
+  @Data
+  public static class Contacts {
+    private String email;
 
-    @Data
-    public static class Subscriptions {
-        private Boolean marketing;
-        @JsonProperty("system_alerts")
-        private Boolean systemAlerts;
-        private Boolean promo;
-        private Boolean educational;
-    }
+    @JsonProperty("phone_number")
+    private String phoneNumber;
 
-    @Data
-    public static class Preferences {
-        private List<String> categories;
-        private List<String> authors;
-    }
+    @JsonProperty("telegram_id")
+    private String telegramId;
 
-    @Data
-    public static class Stats {
-        @JsonProperty("books_purchased")
-        private Integer booksPurchased;
-        @JsonProperty("hours_spent_reading")
-        private Integer hoursSpentReading;
+    @JsonProperty("telegram_username")
+    private String telegramUsername;
 
-        @JsonProperty("last_login_at")
-        private OffsetDateTime lastLoginAt;
-    }
+    @JsonProperty("fcm_token")
+    private String fcmToken;
+  }
 
-    @Data
-    public static class Metadata {
-        @JsonProperty("created_at")
-        private OffsetDateTime createdAt;
+  @Data
+  public static class Channel {
+    private Boolean enabled;
+    private String provider;
 
-        @JsonProperty("last_updated")
-        private OffsetDateTime lastUpdated;
-    }
+    @JsonProperty("last_sent_at")
+    private OffsetDateTime lastSentAt;
+  }
 
-    public enum Gender {
-        MALE, FEMALE
-    }
+  @Data
+  public static class Channels {
+    private Channel email;
+    private Channel sms;
+    private Channel telegram;
+    private Channel push;
+  }
 
-    public enum CustomTag {
-        VERIFIED, VIP, PREMIUM
-    }
+  @Data
+  public static class Subscriptions {
+    private Boolean marketing;
 
-    public enum AccountStatus {
-        ACTIVE, DEACTIVATED, PAUSED, DELETED
-    }
+    @JsonProperty("system_alerts")
+    private Boolean systemAlerts;
 
-    public enum Role {
-        ADMIN,
-        MODERATOR,
-        USER
-    }
+    private Boolean promo;
+    private Boolean educational;
+  }
 
-    public enum Segment {
-        WEB_USER, MOBILE_USER
-    }
+  @Data
+  public static class Preferences {
+    private List<String> categories;
+    private List<String> authors;
+  }
 
-    public enum Language {
-        AZ, ENG, DE;
-    }
+  @Data
+  public static class Stats {
+    @JsonProperty("books_purchased")
+    private Integer booksPurchased;
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        UserEntity that = (UserEntity) o;
-        return Objects.equals(id, that.id);
-    }
+    @JsonProperty("hours_spent_reading")
+    private Integer hoursSpentReading;
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
+    @JsonProperty("last_login_at")
+    private OffsetDateTime lastLoginAt;
+  }
+
+  @Data
+  public static class Metadata {
+    @JsonProperty("created_at")
+    private OffsetDateTime createdAt;
+
+    @JsonProperty("last_updated")
+    private OffsetDateTime lastUpdated;
+  }
+
+  public enum Gender {
+    MALE,
+    FEMALE
+  }
+
+  public enum CustomTag {
+    VERIFIED,
+    VIP,
+    PREMIUM
+  }
+
+  public enum AccountStatus {
+    ACTIVE,
+    DEACTIVATED,
+    PAUSED,
+    DELETED
+  }
+
+  public enum Role {
+    ADMIN,
+    MODERATOR,
+    USER
+  }
+
+  public enum Segment {
+    WEB_USER,
+    MOBILE_USER
+  }
+
+  public enum Language {
+    AZ,
+    ENG,
+    DE;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == null || getClass() != o.getClass()) return false;
+    UserEntity that = (UserEntity) o;
+    return Objects.equals(id, that.id);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(id);
+  }
 }

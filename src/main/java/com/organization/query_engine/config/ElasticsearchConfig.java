@@ -16,24 +16,20 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class ElasticsearchConfig {
 
-    private final ObjectMapper objectMapper;
+  private final ObjectMapper objectMapper;
 
-    @Value("${elasticsearch.host}")
-    private String host;
+  @Value("${elasticsearch.host}")
+  private String host;
 
-    @Value("${elasticsearch.port}")
-    private int port;
+  @Value("${elasticsearch.port}")
+  private int port;
 
-    @Bean
-    public ElasticsearchClient elasticsearchClient() {
-        RestClient restClient = RestClient.builder(
-                new HttpHost(host, port)
-        ).build();
+  @Bean
+  public ElasticsearchClient elasticsearchClient() {
+    RestClient restClient = RestClient.builder(new HttpHost(host, port)).build();
 
-        ElasticsearchTransport transport = new RestClientTransport(
-                restClient,
-                new JacksonJsonpMapper(objectMapper)
-        );
-        return new ElasticsearchClient(transport);
-    }
+    ElasticsearchTransport transport =
+        new RestClientTransport(restClient, new JacksonJsonpMapper(objectMapper));
+    return new ElasticsearchClient(transport);
+  }
 }
