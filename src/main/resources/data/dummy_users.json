@@ -1,0 +1,358 @@
+[
+  {
+    "id": "61330525-06c8-46cb-ac23-219b04490019",
+    "username": "ilkinsamadov",
+    "first_name": "Ilkin",
+    "last_name": "Samadov",
+    "gender": "MALE",
+    "birthday": "1999-10-17",
+    "age": 29,
+    "roles": ["USER"],
+    "language": "AZ",
+    "timezone": "Asia/Baku",
+    "location": { "city": "Sumgait", "country": "Azerbaijan" },
+    "contacts": {
+      "email": "ilkin.semedov96@gmail.com",
+      "phone_number": "+994555176426",
+      "telegram_id": "169830026",
+      "telegram_username": "@ilkin_samadov",
+      "fcm_token": "fcm_351120"
+    },
+    "channels": {
+      "email": {
+        "enabled": true,
+        "provider": "SendGrid",
+        "last_sent_at": "2025-11-04T09:15:32+08:00"
+      },
+      "sms": { "enabled": false, "provider": "Twilio", "last_sent_at": null },
+      "telegram": {
+        "enabled": true,
+        "provider": "TelegramBotAPI",
+        "last_sent_at": "2025-11-04T09:15:32+01:00"
+      },
+      "push": { "enabled": false, "provider": "Firebase", "last_sent_at": null }
+    },
+    "subscriptions": {
+      "marketing": true,
+      "system_alerts": true,
+      "promo": false,
+      "educational": false
+    },
+    "preferences": {
+      "categories": ["non-fiction"],
+      "authors": ["Yuval Noah Harari", "Stephen King"]
+    },
+    "segments": ["WEB_USER"],
+    "custom_tags": ["VERIFIED"],
+    "account_status": "ACTIVE",
+    "stats": {
+      "books_purchased": 74,
+      "hours_spent_reading": 146,
+      "last_login_at": "2025-01-14T00:00:00+01:00"
+    },
+    "metadata": {
+      "created_at": "2024-04-09T00:00:00+01:00",
+      "last_updated": "2024-05-09T00:00:00+01:00"
+    }
+  },
+  {
+    "id": "61311525-06c8-46cb-ac23-219b04490019",
+    "username": "ganirasamadova",
+    "first_name": "Ganira",
+    "last_name": "Samadova",
+    "gender": "FEMALE",
+    "birthday": "1996-10-17",
+    "age": 24,
+    "roles": ["USER"],
+    "language": "AZ",
+    "timezone": "Asia/Baku",
+    "location": { "city": "Sumgait", "country": "Azerbaijan" },
+    "contacts": {
+      "email": "seferliqenire@gmail.com",
+      "phone_number": "+994555176426",
+      "telegram_id": "169830026",
+      "telegram_username": "@ilkin_samadov",
+      "fcm_token": "fcm_351120"
+    },
+    "channels": {
+      "email": {
+        "enabled": true,
+        "provider": "SendGrid",
+        "last_sent_at": "2025-11-04T09:15:32+01:00"
+      },
+      "sms": { "enabled": false, "provider": "Twilio", "last_sent_at": null },
+      "telegram": {
+        "enabled": true,
+        "provider": "TelegramBotAPI",
+        "last_sent_at": "2025-11-04T09:15:32+01:00"
+      },
+      "push": { "enabled": false, "provider": "Firebase", "last_sent_at": null }
+    },
+    "subscriptions": {
+      "marketing": true,
+      "system_alerts": true,
+      "promo": false,
+      "educational": false
+    },
+    "preferences": {
+      "categories": ["non-fiction"],
+      "authors": ["Yuval Noah Harari", "Stephen King"]
+    },
+    "segments": ["WEB_USER"],
+    "custom_tags": ["VERIFIED"],
+    "account_status": "ACTIVE",
+    "stats": {
+      "books_purchased": 74,
+      "hours_spent_reading": 146,
+      "last_login_at": "2025-01-14T00:00:00+01:00"
+    },
+    "metadata": {
+      "created_at": "2024-04-09T00:00:00+01:00",
+      "last_updated": "2024-05-09T00:00:00+01:00"
+    }
+  },
+  {
+    "id": "9af03b9e-231f-4a9d-b12e-2db8f8d90f17",
+    "username": "leyla98",
+    "first_name": "Leyla",
+    "last_name": "Mammadova",
+    "gender": "FEMALE",
+    "birthday": "1996-10-17",
+    "age": 27,
+    "roles": ["USER"],
+    "language": "AZ",
+    "timezone": "Asia/Baku",
+    "location": { "city": "Baku", "country": "AZ" },
+    "contacts": {
+      "email": "leyla.mammadova98@gmail.com",
+      "phone_number": "+994507654321",
+      "telegram_id": "872394561",
+      "telegram_username": "@leyla_98",
+      "fcm_token": "fcm_982150"
+    },
+    "channels": {
+      "email": {
+        "enabled": true,
+        "provider": "SendGrid",
+        "last_sent_at": "2025-10-20T12:10:45+01:00"
+      },
+      "sms": { "enabled": false, "provider": "Twilio", "last_sent_at": null },
+      "telegram": {
+        "enabled": true,
+        "provider": "TelegramBotAPI",
+        "last_sent_at": "2025-10-20T12:10:45+01:00"
+      },
+      "push": {
+        "enabled": true,
+        "provider": "Firebase",
+        "last_sent_at": "2025-10-20T12:10:45+01:00"
+      }
+    },
+    "subscriptions": {
+      "marketing": false,
+      "system_alerts": true,
+      "promo": true,
+      "educational": true
+    },
+    "preferences": {
+      "categories": ["fiction", "thriller"],
+      "authors": ["Stephen King", "Agatha Christie"]
+    },
+    "segments": ["MOBILE_USER"],
+    "custom_tags": ["PREMIUM"],
+    "account_status": "ACTIVE",
+    "stats": {
+      "books_purchased": 120,
+      "hours_spent_reading": 412,
+      "last_login_at": "2025-11-01T18:42:00+01:00"
+    },
+    "metadata": {
+      "created_at": "2023-12-10T00:00:00+01:00",
+      "last_updated": "2025-05-09T00:00:00+01:00"
+    }
+  },
+  {
+    "id": "e8b42d30-b48a-4de3-89b7-5ccfef25e102",
+    "username": "murad_tech",
+    "first_name": "Murad",
+    "last_name": "Aliyev",
+    "gender": "MALE",
+    "birthday": "2000-05-10",
+    "age": 31,
+    "roles": ["ADMIN"],
+    "language": "ENG",
+    "timezone": "Europe/Berlin",
+    "location": { "city": "Berlin", "country": "DE" },
+    "contacts": {
+      "email": "murad.aliyev@company.com",
+      "phone_number": "+4915123456789",
+      "telegram_id": "23394022",
+      "telegram_username": "@murad_tech",
+      "fcm_token": "fcm_762420"
+    },
+    "channels": {
+      "email": {
+        "enabled": true,
+        "provider": "SendGrid",
+        "last_sent_at": "2025-09-01T07:00:00+02:00"
+      },
+      "sms": {
+        "enabled": true,
+        "provider": "Twilio",
+        "last_sent_at": "2025-09-01T07:00:00+02:00"
+      },
+      "telegram": {
+        "enabled": true,
+        "provider": "TelegramBotAPI",
+        "last_sent_at": "2025-09-01T07:00:00+02:00"
+      },
+      "push": {
+        "enabled": true,
+        "provider": "Firebase",
+        "last_sent_at": "2025-09-01T07:00:00+02:00"
+      }
+    },
+    "subscriptions": {
+      "marketing": false,
+      "system_alerts": true,
+      "promo": false,
+      "educational": true
+    },
+    "preferences": {
+      "categories": ["technology", "business"],
+      "authors": ["Simon Sinek"]
+    },
+    "segments": ["WEB_USER"],
+    "custom_tags": ["VIP"],
+    "account_status": "ACTIVE",
+    "stats": {
+      "books_purchased": 210,
+      "hours_spent_reading": 900,
+      "last_login_at": "2025-10-30T09:32:00+02:00"
+    },
+    "metadata": {
+      "created_at": "2022-01-10T00:00:00+02:00",
+      "last_updated": "2025-10-01T00:00:00+02:00"
+    }
+  },
+  {
+    "id": "94a0d023-9a6f-4034-91d5-72766e6b0220",
+    "username": "sabina_reads",
+    "first_name": "Sabina",
+    "last_name": "Rustamova",
+    "gender": "FEMALE",
+    "birthday": "1996-10-17",
+    "age": 25,
+    "roles": ["USER"],
+    "language": "AZ",
+    "timezone": "Asia/Baku",
+    "location": { "city": "Ganja", "country": "AZ" },
+    "contacts": {
+      "email": "sabina.rustamova@gmail.com",
+      "phone_number": "+994507777777",
+      "telegram_id": "441902120",
+      "telegram_username": "@sabina_reads",
+      "fcm_token": "fcm_441999"
+    },
+    "channels": {
+      "email": {
+        "enabled": true,
+        "provider": "SendGrid",
+        "last_sent_at": "2025-11-02T13:11:00+01:00"
+      },
+      "sms": { "enabled": false, "provider": "Twilio", "last_sent_at": null },
+      "telegram": {
+        "enabled": true,
+        "provider": "TelegramBotAPI",
+        "last_sent_at": "2025-11-02T13:11:00+01:00"
+      },
+      "push": { "enabled": false, "provider": "Firebase", "last_sent_at": null }
+    },
+    "subscriptions": {
+      "marketing": true,
+      "system_alerts": true,
+      "promo": true,
+      "educational": true
+    },
+    "preferences": {
+      "categories": ["romance", "fiction"],
+      "authors": ["Colleen Hoover"]
+    },
+    "segments": ["MOBILE_USER"],
+    "custom_tags": ["VERIFIED"],
+    "account_status": "ACTIVE",
+    "stats": {
+      "books_purchased": 40,
+      "hours_spent_reading": 210,
+      "last_login_at": "2025-10-29T10:40:00+01:00"
+    },
+    "metadata": {
+      "created_at": "2024-01-15T00:00:00+01:00",
+      "last_updated": "2025-10-15T00:00:00+01:00"
+    }
+  },
+  {
+    "id": "3c2e09e1-b4f3-4a87-8995-1a326033b28a",
+    "username": "emin_writer",
+    "first_name": "Emin",
+    "last_name": "Huseynov",
+    "gender": "MALE",
+    "birthday": "1996-10-17",
+    "age": 33,
+    "roles": ["USER"],
+    "language": "ENG",
+    "timezone": "Europe/London",
+    "location": { "city": "London", "country": "UK" },
+    "contacts": {
+      "email": "emin.huseynov@outlook.com",
+      "phone_number": "+447852341290",
+      "telegram_id": "98023412",
+      "telegram_username": "@emin_writer",
+      "fcm_token": "fcm_842155"
+    },
+    "channels": {
+      "email": {
+        "enabled": true,
+        "provider": "SendGrid",
+        "last_sent_at": "2025-10-25T14:45:00+00:00"
+      },
+      "sms": {
+        "enabled": true,
+        "provider": "Twilio",
+        "last_sent_at": "2025-10-25T14:45:00+00:00"
+      },
+      "telegram": {
+        "enabled": false,
+        "provider": "TelegramBotAPI",
+        "last_sent_at": null
+      },
+      "push": {
+        "enabled": true,
+        "provider": "Firebase",
+        "last_sent_at": "2025-10-25T14:45:00+00:00"
+      }
+    },
+    "subscriptions": {
+      "marketing": true,
+      "system_alerts": false,
+      "promo": true,
+      "educational": false
+    },
+    "preferences": {
+      "categories": ["non-fiction", "writing"],
+      "authors": ["George Orwell"]
+    },
+    "segments": ["WEB_USER"],
+    "custom_tags": ["VIP"],
+    "stats": {
+      "books_purchased": 58,
+      "hours_spent_reading": 320,
+      "last_login_at": "2025-11-03T12:00:00+00:00"
+    },
+    "account_status": "DEACTIVATED",
+    "metadata": {
+      "created_at": "2023-08-21T00:00:00+00:00",
+      "last_updated": "2025-08-21T00:00:00+00:00"
+    }
+  }
+]

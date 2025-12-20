@@ -1,0 +1,20 @@
+{
+  "library": "spring-boot",
+  "dateLibrary": "java8-localdatetime",
+  "interfaceOnly": true,
+  "hideGenerationTimestamp": true,
+  "basePackage": "com.organization.query_engine",
+  "modelPackage": "com.organization.query_engine.api.model",
+  "apiPackage": "com.organization.query_engine.api",
+  "invokerPackage": "com.organization.query_engine.api",
+  "serializableModel": true,
+  "openApiNullable": false,
+  "useTags": true,
+  "useGzipFeature": true,
+  "unhandledException": true,
+  "useSpringBoot3": true,
+  "useSwaggerUI": true,
+  "additionalProperties": {
+    "builder": true
+  }
+}

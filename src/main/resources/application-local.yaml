@@ -1,0 +1,35 @@
+server:
+  port: 8083
+
+elasticsearch:
+  host: localhost
+  port: 9200
+  indexName: users
+  pathName: data/dummy_users.json
+
+management:
+  server:
+    port: 9091
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  metrics:
+    tags:
+      application: query-engine
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+spring:
+  output:
+    ansi:
+      enabled: always
+

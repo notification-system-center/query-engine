@@ -1,0 +1,114 @@
+[
+  {
+    "id": "61330525-06c8-46cb-ac23-219b04490019",
+    "username": "test",
+    "first_name": "test",
+    "last_name": "Samadov",
+    "gender": "MALE",
+    "birthday": "1999-10-17",
+    "age": 29,
+    "roles": ["USER"],
+    "language": "AZ",
+    "timezone": "Asia/Baku",
+    "location": { "city": "Sumgait", "country": "Azerbaijan" },
+    "contacts": {
+      "email": "ilkin.semedov96@gmail.com",
+      "phone_number": "+994555176426",
+      "telegram_id": "169830026",
+      "telegram_username": "@ilkin_samadov",
+      "fcm_token": "fcm_351120"
+    },
+    "channels": {
+      "email": {
+        "enabled": true,
+        "provider": "SendGrid",
+        "last_sent_at": "2025-11-04T09:15:32+08:00"
+      },
+      "sms": { "enabled": false, "provider": "Twilio", "last_sent_at": null },
+      "telegram": {
+        "enabled": true,
+        "provider": "TelegramBotAPI",
+        "last_sent_at": "2025-11-04T09:15:32+01:00"
+      },
+      "push": { "enabled": false, "provider": "Firebase", "last_sent_at": null }
+    },
+    "subscriptions": {
+      "marketing": true,
+      "system_alerts": true,
+      "promo": false,
+      "educational": false
+    },
+    "preferences": {
+      "categories": ["non-fiction"],
+      "authors": ["Yuval Noah Harari", "Stephen King"]
+    },
+    "segments": ["WEB_USER"],
+    "custom_tags": ["VERIFIED"],
+    "account_status": "ACTIVE",
+    "stats": {
+      "books_purchased": 74,
+      "hours_spent_reading": 146,
+      "last_login_at": "2025-01-14T00:00:00+01:00"
+    },
+    "metadata": {
+      "created_at": "2024-04-09T00:00:00+01:00",
+      "last_updated": "2024-05-09T00:00:00+01:00"
+    }
+  },
+  {
+    "id": "61311525-06c8-46cb-ac23-219b04490019",
+    "username": "testganirasamadova",
+    "first_name": "testGanira",
+    "last_name": "Samadova",
+    "gender": "FEMALE",
+    "birthday": "1996-10-17",
+    "age": 24,
+    "roles": ["USER"],
+    "language": "AZ",
+    "timezone": "Asia/Baku",
+    "location": { "city": "Sumgait", "country": "Azerbaijan" },
+    "contacts": {
+      "email": "seferliqenire@gmail.com",
+      "phone_number": "+994555176426",
+      "telegram_id": "169830026",
+      "telegram_username": "@ilkin_samadov",
+      "fcm_token": "fcm_351120"
+    },
+    "channels": {
+      "email": {
+        "enabled": true,
+        "provider": "SendGrid",
+        "last_sent_at": "2025-11-04T09:15:32+01:00"
+      },
+      "sms": { "enabled": false, "provider": "Twilio", "last_sent_at": null },
+      "telegram": {
+        "enabled": true,
+        "provider": "TelegramBotAPI",
+        "last_sent_at": "2025-11-04T09:15:32+01:00"
+      },
+      "push": { "enabled": false, "provider": "Firebase", "last_sent_at": null }
+    },
+    "subscriptions": {
+      "marketing": true,
+      "system_alerts": true,
+      "promo": false,
+      "educational": false
+    },
+    "preferences": {
+      "categories": ["non-fiction"],
+      "authors": ["Yuval Noah Harari", "Stephen King"]
+    },
+    "segments": ["WEB_USER"],
+    "custom_tags": ["VERIFIED"],
+    "account_status": "ACTIVE",
+    "stats": {
+      "books_purchased": 74,
+      "hours_spent_reading": 146,
+      "last_login_at": "2025-01-14T00:00:00+01:00"
+    },
+    "metadata": {
+      "created_at": "2024-04-09T00:00:00+01:00",
+      "last_updated": "2024-05-09T00:00:00+01:00"
+    }
+  }
+]

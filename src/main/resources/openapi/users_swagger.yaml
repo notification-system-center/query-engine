@@ -1,0 +1,257 @@
+openapi: 3.0.4
+info:
+  title: Query Engine API
+  description: API for querying user data with flexible filters and pagination.
+  version: 1.0.0
+
+externalDocs:
+  description: Local server
+  url: https://swagger.io
+
+servers:
+  - url: https://localhost:8080
+
+tags:
+  - name: user
+    description: Operations about user
+
+paths:
+  /v1/user/findById/{userId}:
+    get:
+      tags:
+        - user
+      summary: Finds User by userId.
+      description: Retrieve user details using userId.
+      operationId: findByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: The UUID of the user to retrieve.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '400':
+          description: Invalid userId value
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: User not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    # --- Enums ---
+    Gender:
+      type: string
+      enum: [ MALE, FEMALE ]
+      x-enum-class-name: Gender
+
+    CustomTag:
+      type: string
+      enum: [ VERIFIED, VIP, PREMIUM ]
+      x-enum-class-name: CustomTag
+
+    AccountStatus:
+      type: string
+      enum: [ ACTIVE, DEACTIVATED, PAUSED, DELETED ]
+      x-enum-class-name: AccountStatus
+
+    Role:
+      type: string
+      enum: [ ADMIN, MODERATOR, USER ]
+      x-enum-class-name: Role
+
+    Segment:
+      type: string
+      enum: [ WEB_USER, MOBILE_USER ]
+      x-enum-class-name: Segment
+
+
+    Language:
+      type: string
+      enum: [ AZ, ENG, DE ]
+      x-enum-class-name: Language
+
+
+    Location:
+      type: object
+      properties:
+        city:
+          type: string
+        country:
+          type: string
+
+    Contacts:
+      type: object
+      properties:
+        email:
+          type: string
+        phoneNumber:
+          type: string
+        telegramId:
+          type: string
+        telegramUsername:
+          type: string
+        fcmToken:
+          type: string
+
+    Channel:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        provider:
+          type: string
+        lastSentAt:
+          type: string
+          format: date-time
+          nullable: true
+
+    Channels:
+      type: object
+      properties:
+        email:
+          $ref: '#/components/schemas/Channel'
+        sms:
+          $ref: '#/components/schemas/Channel'
+        telegram:
+          $ref: '#/components/schemas/Channel'
+        push:
+          $ref: '#/components/schemas/Channel'
+
+    Subscriptions:
+      type: object
+      properties:
+        marketing:
+          type: boolean
+        systemAlerts:
+          type: boolean
+        promo:
+          type: boolean
+        educational:
+          type: boolean
+
+    Preferences:
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            type: string
+        authors:
+          type: array
+          items:
+            type: string
+
+    Stats:
+      type: object
+      properties:
+        booksPurchased:
+          type: integer
+        hoursSpentReading:
+          type: integer
+        lastLoginAt:
+          type: string
+          format: date-time
+
+
+    Metadata:
+      type: object
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        lastUpdated:
+          type: string
+          format: date-time
+
+    # --- Main User Detail ---
+    UserDetail:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        username:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        gender:
+          $ref: '#/components/schemas/Gender'
+        accountStatus:
+          $ref: '#/components/schemas/AccountStatus'
+        birthday:
+          type: string
+          format: date
+        age:
+          type: integer
+        roles:
+          type: array
+          items:
+            $ref: '#/components/schemas/Role'
+        language:
+          $ref: '#/components/schemas/Language'
+        timezone:
+          type: string
+        location:
+          $ref: '#/components/schemas/Location'
+        contacts:
+          $ref: '#/components/schemas/Contacts'
+        channels:
+          $ref: '#/components/schemas/Channels'
+        subscriptions:
+          $ref: '#/components/schemas/Subscriptions'
+        preferences:
+          $ref: '#/components/schemas/Preferences'
+        segments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Segment'
+        customTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomTag'
+        stats:
+          $ref: '#/components/schemas/Stats'
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+
+    ApiResponse:
+      type: object
+      description: Generic API response wrapper.
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        data:
+          type: object
+
+    Error:
+      type: object
+      properties:
+        title:
+          type: string
+        status:
+          type: string
+        detail:
+          type: string
+      required:
+        - title
+        - status
+        - detail
