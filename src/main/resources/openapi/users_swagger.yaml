@@ -38,24 +38,94 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiResponse'
+              example:
+                code: "200"
+                message: "User fetched successfully"
+                data: {
+                  "id": "123e4567-e89b-12d3-a456-426614174000",
+                  "username": "Ganira",
+                  "firstName": "Ganira",
+                  "lastName": "Samadova",
+                  "gender": "FEMALE",
+                  "accountStatus": "ACTIVE",
+                  "birthday": "1990-05-15",
+                  "age": 25,
+                  "roles": ["USER"],
+                  "language": "ENG",
+                  "timezone": "UTC+4",
+                  "location": {
+                    "city": "Baku",
+                    "country": "Azerbaijan"},
+                  "contacts": {
+                    "email": "ganira.samadova@example.com",
+                    "phoneNumber": "+994501234567",
+                    "telegramId": "123456789",
+                    "telegramUsername": "@seferli",
+                    "fcmToken": "fcm_token_here"},
+                  "channels": {
+                    "email": {
+                      "enabled": true,
+                      "provider": "SendGrid",
+                      "lastSentAt": "2024-01-01T10:00:00Z"},
+                    "sms": {
+                      "enabled": false,
+                      "provider": null,
+                      "lastSentAt": null },
+                    "telegram": {
+                      "enabled": true,
+                      "provider": "Telegram Bot API",
+                      "lastSentAt": "2024-01-02T15:30:00Z"},
+                    "push": {
+                      "enabled": true,
+                      "provider": "FCM",
+                      "lastSentAt": "2024-01-03T08:45:00Z" }},
+                  "subscriptions": {
+                    "marketing": true,
+                    "systemAlerts": true,
+                    "promo": false,
+                    "educational": true},
+                  "preferences": {
+                    "categories": ["Fiction", "Science", "Technology"],
+                    "authors": ["Author One", "Author Two"]},
+                  "segments": ["WEB_USER"],
+                  "customTags": ["VERIFIED", "PREMIUM"],
+                  "stats": {
+                    "booksPurchased": 25,
+                    "hoursSpentReading": 150,
+                    "lastLoginAt": "2024-01-05T09:00:00Z"},
+                  "metadata": {
+                    "createdAt": "2023-01-01T00:00:00Z",
+                    "lastUpdated": "2024-01-05T09:00:00Z"}}
         '400':
           description: Invalid userId value
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+              example:
+                message: "Invalid userId value"
+                code: "400"
+                detail: "The provided userId is not a valid UUID format"
         '404':
           description: User not found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+              example:
+                message: "User not found"
+                code: "404"
+                detail: "No user exists with the provided userId"
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+              example:
+                message: "Internal server error"
+                code: "500"
+                detail: "An unexpected error occurred while processing the request"
 
 components:
   schemas:
@@ -70,10 +140,10 @@ components:
       enum: [ VERIFIED, VIP, PREMIUM ]
       x-enum-class-name: CustomTag
 
-    AccountStatus:
+    Accountcode:
       type: string
       enum: [ ACTIVE, DEACTIVATED, PAUSED, DELETED ]
-      x-enum-class-name: AccountStatus
+      x-enum-class-name: Accountcode
 
     Role:
       type: string
@@ -199,8 +269,8 @@ components:
           type: string
         gender:
           $ref: '#/components/schemas/Gender'
-        accountStatus:
-          $ref: '#/components/schemas/AccountStatus'
+        accountcode:
+          $ref: '#/components/schemas/Accountcode'
         birthday:
           type: string
           format: date
@@ -247,17 +317,19 @@ components:
           type: string
         data:
           type: object
+        detail:
+          type: string
 
     Error:
       type: object
       properties:
-        title:
+        message:
           type: string
-        status:
+        code:
           type: string
         detail:
           type: string
       required:
-        - title
-        - status
+        - message
+        - code
         - detail
